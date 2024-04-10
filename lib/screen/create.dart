@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/ambulance/amb.dart';
+import 'package:flutter_application_1/screen/newuser.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:flutter_application_1/screen/register.dart';
-import 'package:flutter_application_1/screen/newuser.dart';
 
 class Createacc extends StatefulWidget {
   const Createacc({Key? key}) : super(key: key);
@@ -59,7 +59,7 @@ class Loginstate extends State<Createacc> {
                 children: [
                   
                   buildButton('Register as new user', isNewUser: true),
-                  buildButton('Register as Ambulance Driver'),
+                  buildButton('Register as Ambulance Driver',),
                   buildButton('Register as Alert receiver'),
                 ],
               ),
@@ -86,9 +86,13 @@ Widget buildButton(String text, {bool isNewUser = false}) {
           } else {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Registers()),
+              MaterialPageRoute(builder: (context) => Amb()),
             );
           }
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Amb()),
+            );
         },
         style: buttonStyle,
         child: Text(text,style: TextStyle(fontSize: 23),),
